@@ -1,0 +1,12 @@
+# File creati durante i controlli locali
+.edge-*
+*-check.png
+*-verified.png
+
+# Cartelle locali degli strumenti
+.netlify/
+
+# File di sistema
+.DS_Store
+Thumbs.db
+

@@ -912,21 +912,55 @@ footer > a {
   .menu-button {
     display: block;
   }
-}
 
-@media (max-height: 600px) {
   .menu-panel {
     justify-content: flex-start;
-    padding-top: 82px;
+    padding: 142px 40px 42px;
+  }
+
+  .menu-inner {
+    width: 100%;
+  }
+
+  .menu-inner a {
+    display: flex;
+    min-height: 55px;
+    align-items: center;
+    color: #c2c2bf;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .menu-inner a:hover,
+  .menu-inner a:focus-visible {
+    color: #ffffff;
+    transform: none;
+  }
+
+  .menu-inner a[aria-current="page"] {
+    color: #ba7774;
+    transform: none;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 760px) {
+  .menu-panel {
+    justify-content: flex-start;
+    padding: 142px 40px 32px;
   }
 
   .menu-inner {
     margin: 0;
-    padding: 18px 0 28px;
+    padding: 0 0 24px;
   }
 
   .menu-inner a {
-    font-size: clamp(2rem, 9vh, 3rem);
+    min-height: 55px;
+    font-size: 1.1rem;
   }
 
   .menu-signature {
@@ -988,7 +1022,7 @@ footer > a {
   }
 
   .menu-panel {
-    padding-inline: 25px;
+    padding: 136px 40px 40px;
   }
 
   .brand-role {
@@ -1006,7 +1040,7 @@ footer > a {
   }
 
   .menu-inner a {
-    font-size: clamp(2.6rem, 14vw, 4.2rem);
+    font-size: 1.1rem;
   }
 
   .section {

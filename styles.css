@@ -556,6 +556,12 @@ footer h2 {
   max-width: 760px;
 }
 
+.book-detail + .book-detail {
+  margin-top: clamp(80px, 11vw, 150px);
+  padding-top: clamp(80px, 11vw, 150px);
+  border-top: 1px solid var(--line-dark);
+}
+
 .home-book-copy h3,
 .book-detail-copy h2 {
   margin: 0;

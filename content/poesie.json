@@ -1,0 +1,19 @@
+{
+  "poems": [
+    {
+      "title": "Non ho bisogno di…",
+      "text": "… sguardi giudicanti sparati\nda quadri senza colori.\n\n… raffiche di parole povere,\npiogge di veleno ch’escono\nda piccoli mendicanti della vita.\n\n… d’innalzarmi al più alto dei sapienti\ntrafiggendo il cielo con ali di cera.\n\nHo bisogno di restare collegato\na me stesso, sempre in diretta\nsu questo mutevole palcoscenico.",
+      "featured": false
+    },
+    {
+      "title": "Preferisco…",
+      "text": "… i canti senza tempo\ndi ortiche in campi incolti.\n… le risate irriverenti\ndi piogge primaverili.\n… i sussurri sognanti\ndi una notte senza stelle.\n… tutte quelle storie\nascoltate, ancora d’ascoltare\ne che, in segreto, non scriverò.",
+      "featured": false
+    },
+    {
+      "title": "Ho conosciuto il silenzio…",
+      "text": "… tra le righe di parole\nmai dette né scritte;\nho ascoltato quello del cuore\narreso e sanguinante\ndopo lunghi addii\nche sapevano di assenzio.\nFaccio mio anche il tuo silenzio,\npugnalata nella mente,\nperché rispetto e amo\nogni tua libertà.",
+      "featured": false
+    }
+  ]
+}

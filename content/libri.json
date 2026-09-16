@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "title": "Zanne nelle tenebre",
+      "genre": "Weird",
+      "cover": "/assets/copertina-zanne-nelle-tenebre.jpg",
+      "tagline": "Dalle tenebre della palude, una minaccia creata dall'uomo. Un solo uomo può fermarla.",
+      "description": "Patrick Moore, colonnello reduce da un incidente stradale che gli è costato la donna che amava e gli ha lasciato un collo di acciaio, crede di aver toccato il fondo. Si sbaglia. Il governo degli Stati Uniti gli offre una missione top secret: recarsi nella remota e infestata palude di Serenity Creek e debellare una piaga di creature spietate che stanno decimando la popolazione.\n\nArmato solo di un fucile d'assalto all'avanguardia e di una rabbia che lo consuma, Patrick si addentra in un incubo di nebbia e fango. Le creature che caccia non sono animali, ma qualcosa di molto più spaventoso: intelligenti, letali e con un'origine che grida vendetta. Presto, Patrick scoprirà che il vero mostro non striscia nella palude, ma alberga nell'uomo stesso, e che la sua missione di salvezza nasconde una verità che potrebbe distruggere tutto ciò in cui crede.\n\nIn una lotta per la sopravvivenza dove ogni notte potrebbe essere l'ultima, l'unica cosa più forte della paura è l'istinto di un guerriero che non ha più nulla da perdere.",
+      "publisher": "Delos Digital",
+      "year": 2026,
+      "series": "Innsmouth n. 253",
+      "release": "26/05/2026 (riedizione)",
+      "format": "Ebook · EPUB e Kindle",
+      "pages": 165,
+      "isbn": "9788825437188",
+      "purchase_url": "https://delos.digital/9788825437188/zanne-nelle-tenebre",
+      "featured": true
+    }
+  ]
+}

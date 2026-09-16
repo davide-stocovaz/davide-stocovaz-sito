@@ -1,0 +1,90 @@
+backend:
+  name: turbo-github
+  turbo_site_id: INSERIRE_ID_DEL_SITO_TURBO
+  branch: main
+
+publish_mode: editorial_workflow
+locale: it
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: catalogo
+    label: Contenuti del sito
+    files:
+      - name: libri
+        label: Libri
+        file: content/libri.json
+        format: json
+        fields:
+          - name: books
+            label: Libri
+            label_singular: Libro
+            widget: list
+            allow_reorder: true
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Titolo, widget: string }
+              - { name: genre, label: Genere, widget: string, required: false }
+              - { name: cover, label: Copertina, widget: image }
+              - { name: tagline, label: Frase di lancio, widget: text }
+              - { name: description, label: Trama, widget: text }
+              - { name: publisher, label: Editore, widget: string, required: false }
+              - { name: year, label: Anno, widget: number, value_type: int, required: false }
+              - { name: series, label: Collana, widget: string, required: false }
+              - { name: release, label: Data di uscita, widget: string, required: false }
+              - { name: format, label: Formato, widget: string, required: false }
+              - { name: pages, label: Pagine, widget: number, value_type: int, required: false }
+              - { name: isbn, label: ISBN, widget: string, required: false }
+              - { name: purchase_url, label: Collegamento per acquistarlo, widget: string, required: false }
+              - { name: featured, label: Mostra nella Home, widget: boolean, default: false }
+
+      - name: poesie
+        label: Poesie
+        file: content/poesie.json
+        format: json
+        fields:
+          - name: poems
+            label: Poesie
+            label_singular: Poesia
+            widget: list
+            allow_reorder: true
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Titolo, widget: string }
+              - { name: text, label: Testo, widget: text }
+              - { name: featured, label: Mostra nella Home, widget: boolean, default: false }
+
+      - name: racconti
+        label: Racconti
+        file: content/racconti.json
+        format: json
+        fields:
+          - name: stories
+            label: Racconti
+            label_singular: Racconto
+            widget: list
+            allow_reorder: true
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Titolo, widget: string }
+              - { name: slug, label: Indirizzo breve, widget: string, hint: "Per esempio: linea-x" }
+              - { name: excerpt, label: Anteprima per la Home, widget: text }
+              - { name: text, label: Testo completo, widget: text }
+              - { name: featured, label: Mostra nella Home, widget: boolean, default: false }
+
+      - name: autore
+        label: Biografia e contatti
+        file: content/autore.json
+        format: json
+        fields:
+          - { name: biography, label: Biografia, widget: text }
+          - { name: portrait, label: Foto della biografia, widget: image }
+          - { name: signature, label: Firma, widget: image }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: facebook, label: Nome Facebook, widget: string, required: false }
+          - { name: facebook_url, label: Collegamento Facebook, widget: string, required: false }
+          - { name: instagram, label: Nome Instagram, widget: string, required: false }
+          - { name: instagram_url, label: Collegamento Instagram, widget: string, required: false }
+          - { name: tiktok, label: Nome TikTok, widget: string, required: false }
+          - { name: tiktok_url, label: Collegamento TikTok, widget: string, required: false }

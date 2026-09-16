@@ -1,21 +1,38 @@
 {
   "books": [
     {
-      "title": "Zanne nelle tenebre",
-      "genre": "Weird",
-      "cover": "/assets/copertina-zanne-nelle-tenebre.jpg",
-      "tagline": "Dalle tenebre della palude, una minaccia creata dall'uomo. Un solo uomo può fermarla.",
-      "description": "Patrick Moore, colonnello reduce da un incidente stradale che gli è costato la donna che amava e gli ha lasciato un collo di acciaio, crede di aver toccato il fondo. Si sbaglia. Il governo degli Stati Uniti gli offre una missione top secret: recarsi nella remota e infestata palude di Serenity Creek e debellare una piaga di creature spietate che stanno decimando la popolazione.\n\nArmato solo di un fucile d'assalto all'avanguardia e di una rabbia che lo consuma, Patrick si addentra in un incubo di nebbia e fango. Le creature che caccia non sono animali, ma qualcosa di molto più spaventoso: intelligenti, letali e con un'origine che grida vendetta. Presto, Patrick scoprirà che il vero mostro non striscia nella palude, ma alberga nell'uomo stesso, e che la sua missione di salvezza nasconde una verità che potrebbe distruggere tutto ciò in cui crede.\n\nIn una lotta per la sopravvivenza dove ogni notte potrebbe essere l'ultima, l'unica cosa più forte della paura è l'istinto di un guerriero che non ha più nulla da perdere.",
-      "publisher": "Delos Digital",
-      "year": 2026,
-      "series": "Innsmouth n. 253",
-      "release": "26/05/2026 (riedizione)",
       "publication_date": "2026-05-26",
-      "formats": ["Ebook · EPUB e Kindle"],
+      "genre": "Weird",
       "pages": 165,
-      "isbn": "9788825437188",
+      "release": "26/05/2026 (riedizione)",
+      "tagline": "Dalle tenebre della palude, una minaccia creata dall'uomo. Un solo uomo può fermarla.",
       "purchase_url": "https://delos.digital/9788825437188/zanne-nelle-tenebre",
-      "reviews": []
+      "isbn": "9788825437188",
+      "series": "Innsmouth n. 253",
+      "cover": "/assets/copertina-zanne-nelle-tenebre.jpg",
+      "title": "Zanne nelle tenebre",
+      "reviews": [],
+      "publisher": "Delos Digital",
+      "formats": [
+        "Ebook · EPUB e Kindle"
+      ],
+      "description": "Patrick Moore, colonnello reduce da un incidente stradale che gli è costato la donna che amava e gli ha lasciato un collo di acciaio, crede di aver toccato il fondo. Si sbaglia. Il governo degli Stati Uniti gli offre una missione top secret: recarsi nella remota e infestata palude di Serenity Creek e debellare una piaga di creature spietate che stanno decimando la popolazione.\n\nArmato solo di un fucile d'assalto all'avanguardia e di una rabbia che lo consuma, Patrick si addentra in un incubo di nebbia e fango. Le creature che caccia non sono animali, ma qualcosa di molto più spaventoso: intelligenti, letali e con un'origine che grida vendetta. Presto, Patrick scoprirà che il vero mostro non striscia nella palude, ma alberga nell'uomo stesso, e che la sua missione di salvezza nasconde una verità che potrebbe distruggere tutto ciò in cui crede.\n\nIn una lotta per la sopravvivenza dove ogni notte potrebbe essere l'ultima, l'unica cosa più forte della paura è l'istinto di un guerriero che non ha più nulla da perdere.",
+      "year": 2026
+    },
+    {
+      "genre": "Sci-fi, weird, horror",
+      "pages": 64,
+      "tagline": "Osate addentrarvi nelle Montagne della Follia?",
+      "purchase_url": "https://delos.digital/9788825434613/ritorno-alle-montagne-della-follia",
+      "series": "Innsmouth",
+      "cover": "/assets/uploads/9788825434613-ritorno-alle-montagne-della-follia.jpg",
+      "title": "Ritorno alle Montagne della Follia",
+      "publisher": "Delos Digital",
+      "formats": [
+        "Ebook, cartaceo"
+      ],
+      "description": "Providence, 1935. Il dottor Paul Estey, psichiatra del Butler Hospital, eredita il diario del suo predecessore. Tra quelle pagine si cela la storia di Francis Moore, l'unico sopravvissuto di una spedizione finanziata segretamente dal governo negli inesplorati ghiacci dell'Antartide.\n\n1932. La spedizione Starkweather-Moore doveva verificare le incredibili – e folli – scoperte di una precedente missione: le rovine di una città mostruosa e antica, così antica da precedere la vita stessa sulla Terra. Ma ciò che la squadra trova va oltre ogni immaginazione umana.\n\nAttraverso il resoconto agghiacciante di Moore, Estey si inoltra in un incubo fatto di creature ancestrali dalla forma stellare, di Shoggoth protoplasmatici e di una verità cosmica così terrificante da aver ridotto i sopravvissuti alla follia. Una verità che riguarda le vere origini della vita sul nostro pianeta e gli orrori che giacciono dormienti nel suo angolo più remoto e gelido.\n\nUn racconto che omaggia e amplia il mito di H.P. Lovecraft, portando il lettore ai confini della ragione umana, in un viaggio claustrofobico tra i ghiacci eterni dove l'umanità non è che una comparsa insignificante in un universo popolato da divinità mostruose e antichi orrori.",
+      "year": 2025
     }
   ]
 }

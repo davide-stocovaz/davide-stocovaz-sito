@@ -32,12 +32,26 @@ collections:
               - { name: publisher, label: Editore, widget: string, required: false }
               - { name: year, label: Anno, widget: number, value_type: int, required: false }
               - { name: series, label: Collana, widget: string, required: false }
-              - { name: release, label: Data di uscita, widget: string, required: false }
-              - { name: format, label: Formato, widget: string, required: false }
+              - { name: release, label: Uscita mostrata sul sito, widget: string, required: false, hint: "Per esempio: 26/05/2026 (riedizione)." }
+              - { name: publication_date, label: Data per stabilire l'ultima uscita, widget: datetime, date_format: "YYYY-MM-DD", picker_utc: true, hint: "Serve soltanto per mostrare automaticamente in Home il libro più recente." }
+              - name: formats
+                label: Formati
+                widget: list
+                required: false
+                field: { name: format, label: Formato, widget: string }
               - { name: pages, label: Pagine, widget: number, value_type: int, required: false }
               - { name: isbn, label: ISBN, widget: string, required: false }
-              - { name: purchase_url, label: Collegamento per acquistarlo, widget: string, required: false }
-              - { name: featured, label: Mostra nella Home, widget: boolean, default: false }
+              - { name: purchase_url, label: Collegamento per acquistarlo, widget: string, required: false, hint: "Deve iniziare con https://" }
+              - name: reviews
+                label: Recensioni
+                label_singular: Recensione
+                widget: list
+                required: false
+                summary: "{{fields.source}}"
+                fields:
+                  - { name: quote, label: Testo della recensione, widget: text }
+                  - { name: source, label: Autore o testata, widget: string }
+                  - { name: url, label: Collegamento facoltativo, widget: string, required: false, hint: "Se lo inserisci, deve iniziare con https://" }
 
       - name: poesie
         label: Poesie
@@ -68,23 +82,30 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { name: title, label: Titolo, widget: string }
-              - { name: slug, label: Indirizzo breve, widget: string, hint: "Per esempio: linea-x" }
-              - { name: excerpt, label: Anteprima per la Home, widget: text }
               - { name: text, label: Testo completo, widget: text }
               - { name: featured, label: Mostra nella Home, widget: boolean, default: false }
 
+      - name: introduzioni
+        label: Testi introduttivi
+        file: content/testi.json
+        format: json
+        fields:
+          - { name: home, label: Introduzione della Home, widget: text }
+          - { name: books, label: Introduzione della pagina Libri, widget: text }
+          - { name: poems, label: Introduzione della pagina Poesie, widget: text }
+          - { name: stories, label: Introduzione della pagina Racconti, widget: text }
+          - { name: biography, label: Introduzione della pagina Biografia, widget: text }
+          - { name: contacts, label: Introduzione della pagina Contatti, widget: text }
+
       - name: autore
-        label: Biografia e contatti
+        label: Biografia e social
         file: content/autore.json
         format: json
         fields:
           - { name: biography, label: Biografia, widget: text }
-          - { name: portrait, label: Foto della biografia, widget: image }
-          - { name: signature, label: Firma, widget: image }
-          - { name: email, label: Email, widget: string, required: false }
           - { name: facebook, label: Nome Facebook, widget: string, required: false }
-          - { name: facebook_url, label: Collegamento Facebook, widget: string, required: false }
+          - { name: facebook_url, label: Collegamento Facebook, widget: string, required: false, hint: "Deve iniziare con https://" }
           - { name: instagram, label: Nome Instagram, widget: string, required: false }
-          - { name: instagram_url, label: Collegamento Instagram, widget: string, required: false }
+          - { name: instagram_url, label: Collegamento Instagram, widget: string, required: false, hint: "Deve iniziare con https://" }
           - { name: tiktok, label: Nome TikTok, widget: string, required: false }
-          - { name: tiktok_url, label: Collegamento TikTok, widget: string, required: false }
+          - { name: tiktok_url, label: Collegamento TikTok, widget: string, required: false, hint: "Deve iniziare con https://" }

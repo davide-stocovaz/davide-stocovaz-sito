@@ -32,7 +32,16 @@
       });
   };
 
-  const storyUrl = (story) => `racconto.html?storia=${encodeURIComponent(story.slug)}`;
+  const slugify = (value) =>
+    String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const storySlug = (story) => story.slug || slugify(story.title);
+  const storyUrl = (story) => `racconto.html?storia=${encodeURIComponent(storySlug(story))}`;
 
   function bookArticle(book) {
     const article = make("article", "book-detail");
@@ -57,7 +66,7 @@
       ["Anno", book.year],
       ["Collana", book.series],
       ["Uscita", book.release],
-      ["Formato", book.format],
+      ["Formato", Array.isArray(book.formats) ? book.formats.join(" · ") : book.format],
       ["Pagine", book.pages],
       ["ISBN", book.isbn],
     ].forEach(([label, value]) => {
@@ -75,6 +84,28 @@
       link.rel = "noopener noreferrer";
       link.append(document.createTextNode("Acquista "), make("span", "", "↗"));
       copy.append(link);
+    }
+
+    if (Array.isArray(book.reviews) && book.reviews.length) {
+      const reviews = make("section", "book-reviews");
+      reviews.append(make("h3", "", "Recensioni"));
+      book.reviews.forEach((review) => {
+        const item = make("figure", "book-review");
+        item.append(make("blockquote", "", review.quote));
+        const caption = make("figcaption");
+        if (review.url) {
+          const source = make("a", "", review.source);
+          source.href = review.url;
+          source.target = "_blank";
+          source.rel = "noopener noreferrer";
+          caption.append(source);
+        } else {
+          caption.textContent = review.source;
+        }
+        item.append(caption);
+        reviews.append(item);
+      });
+      copy.append(reviews);
     }
 
     article.append(cover, copy);
@@ -139,7 +170,6 @@
     const list = document.querySelector(".social-list");
     if (!list) return;
     const entries = [
-      ["Email", data.email, data.email ? `mailto:${data.email}` : ""],
       ["Facebook", data.facebook, data.facebook_url],
       ["Instagram", data.instagram, data.instagram_url],
       ["TikTok", data.tiktok, data.tiktok_url],
@@ -150,10 +180,8 @@
       if (url) {
         const link = make("a", "", value);
         link.href = url;
-        if (!url.startsWith("mailto:")) {
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-        }
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
         detail.append(link);
       } else {
         detail.textContent = value;
@@ -164,13 +192,37 @@
     list.replaceChildren(...rows);
   }
 
+  function renderIntroduction(data) {
+    const selectors = {
+      home: ".hero-copy",
+      books: ".page-hero > p:last-child",
+      poems: ".page-hero > p:last-child",
+      stories: ".page-hero > p:last-child",
+      biography: ".biography-heading > p:last-child",
+      contacts: ".page-hero > p:last-child",
+    };
+    const target = document.querySelector(selectors[page]);
+    if (target && Object.prototype.hasOwnProperty.call(data, page)) {
+      target.textContent = data[page] || "";
+    }
+  }
+
+  function latestBook(books) {
+    return [...(books || [])].sort((first, second) => {
+      const firstDate = Date.parse(first.publication_date || "") || 0;
+      const secondDate = Date.parse(second.publication_date || "") || 0;
+      return secondDate - firstDate;
+    })[0];
+  }
+
   function renderHomeBook(data) {
-    const book = data.books?.find((item) => item.featured) || data.books?.[0];
+    const book = latestBook(data.books);
     const article = document.querySelector(".featured-book-home");
     if (!book || !article) return;
     const image = article.querySelector("img");
     image.src = book.cover;
     image.alt = `Copertina di ${book.title}`;
+    article.querySelector(".book-cover-link").setAttribute("aria-label", `Scopri ${book.title}`);
     article.querySelector(".home-book-copy .eyebrow").textContent = ["Romanzo", book.genre].filter(Boolean).join(" · ");
     article.querySelector("h3").textContent = book.title;
     article.querySelector(".book-tagline").textContent = book.tagline;
@@ -181,7 +233,8 @@
     const article = document.querySelector(".featured-story");
     if (!story || !article) return;
     article.querySelector("h3").textContent = story.title;
-    article.querySelector("h3 + p").textContent = story.excerpt;
+    const excerpt = story.excerpt || String(story.text || "").split(/\n\s*\n/)[0];
+    article.querySelector("h3 + p").textContent = excerpt;
     const link = article.querySelector("a");
     link.href = storyUrl(story);
     link.firstChild.textContent = `Leggi ${story.title} `;
@@ -209,7 +262,7 @@
 
   function renderSingleStory(data) {
     const slug = new URLSearchParams(window.location.search).get("storia");
-    const story = data.stories?.find((item) => item.slug === slug);
+    const story = data.stories?.find((item) => storySlug(item) === slug);
     if (!story) return;
     document.title = `${story.title} — Davide Stocovaz`;
     document.querySelector(".story-reading-hero h1").textContent = story.title;
@@ -225,12 +278,33 @@
         getJson("content/racconti.json").then(renderHomeStory),
         getJson("content/poesie.json").then(renderHomePoem),
         getJson("content/autore.json").then(renderHomeBiography),
+        getJson("content/testi.json").then(renderIntroduction),
       ]),
-    books: () => getJson("content/libri.json").then(renderBooks),
-    poems: () => getJson("content/poesie.json").then(renderPoems),
-    stories: () => getJson("content/racconti.json").then(renderStories),
-    biography: () => getJson("content/autore.json").then(renderBiography),
-    contacts: () => getJson("content/autore.json").then(renderContacts),
+    books: () =>
+      Promise.all([
+        getJson("content/libri.json").then(renderBooks),
+        getJson("content/testi.json").then(renderIntroduction),
+      ]),
+    poems: () =>
+      Promise.all([
+        getJson("content/poesie.json").then(renderPoems),
+        getJson("content/testi.json").then(renderIntroduction),
+      ]),
+    stories: () =>
+      Promise.all([
+        getJson("content/racconti.json").then(renderStories),
+        getJson("content/testi.json").then(renderIntroduction),
+      ]),
+    biography: () =>
+      Promise.all([
+        getJson("content/autore.json").then(renderBiography),
+        getJson("content/testi.json").then(renderIntroduction),
+      ]),
+    contacts: () =>
+      Promise.all([
+        getJson("content/autore.json").then(renderContacts),
+        getJson("content/testi.json").then(renderIntroduction),
+      ]),
     story: () => getJson("content/racconti.json").then(renderSingleStory),
   };
 

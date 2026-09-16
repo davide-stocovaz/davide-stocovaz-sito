@@ -10,11 +10,12 @@
       "year": 2026,
       "series": "Innsmouth n. 253",
       "release": "26/05/2026 (riedizione)",
-      "format": "Ebook · EPUB e Kindle",
+      "publication_date": "2026-05-26",
+      "formats": ["Ebook · EPUB e Kindle"],
       "pages": 165,
       "isbn": "9788825437188",
       "purchase_url": "https://delos.digital/9788825437188/zanne-nelle-tenebre",
-      "featured": true
+      "reviews": []
     }
   ]
 }

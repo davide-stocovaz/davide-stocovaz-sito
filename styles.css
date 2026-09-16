@@ -644,6 +644,47 @@ footer h2 {
   transform: translateY(-2px);
 }
 
+.book-reviews {
+  margin-top: 58px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line-dark);
+}
+
+.book-reviews h3 {
+  margin: 0 0 28px;
+  color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+}
+
+.book-review {
+  margin: 0;
+  padding: 26px 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.book-review blockquote {
+  margin: 0;
+  color: #c5c3c0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.book-review figcaption {
+  margin-top: 14px;
+  color: #91877f;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.book-review figcaption a {
+  color: inherit;
+}
+
 .quote-section {
   position: relative;
   overflow: hidden;

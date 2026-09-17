@@ -44,6 +44,13 @@
       "series": "Odissea Wonderland",
       "cover": "/assets/uploads/carnivores-copertinahiresebook.jpg",
       "title": "Carnivores",
+      "reviews": [
+        {
+          "quote": "Questo è un tipo di storia breve e intensa. È quasi più un racconto lungo che un romanzo breve, senza fronzoli e concentrato sul lato avventuroso della trama. C’è giusto una breve introduzione che fa capire cos’è successo sul pianeta Kepler 452b alla prima missione esplorativa e le motivazioni del protagonista Rook Hanson, che sono fondamentali ai fini degli sviluppi della trama. Dopo le prime pagine, il lettore viene catapultato nell’azione che caratterizza la missione di soccorso....\nuna lettura eccellente per chi apprezza storie per così dire senza complicazioni e veloci. A me è rimasta anche tanta curiosità sugli abitanti di Kepler 452b e spero che Davide Stocovaz scriva altre storie ambientate su questo pianeta.",
+          "source": "Massimo Luciani",
+          "url": "https://netmassimo.com/2024/11/14/carnivores-di-davide-stocovaz/"
+        }
+      ],
       "publisher": "Delos Digital",
       "formats": [
         "Ebook"

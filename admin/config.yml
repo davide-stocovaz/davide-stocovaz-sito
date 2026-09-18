@@ -109,3 +109,13 @@ collections:
           - { name: instagram_url, label: Collegamento Instagram, widget: string, required: false, hint: "Deve iniziare con https://" }
           - { name: tiktok, label: Nome TikTok, widget: string, required: false }
           - { name: tiktok_url, label: Collegamento TikTok, widget: string, required: false, hint: "Deve iniziare con https://" }
+
+      - name: pubblicazione
+        label: "PUBBLICA TUTTO"
+        file: content/pubblicazione.json
+        format: json
+        fields:
+          - name: richiesta
+            label: Avvia la pubblicazione
+            widget: boolean
+            hint: "Cambia la posizione dell'interruttore, salva la bozza e poi pubblicala. Il sistema raccoglierà tutte le altre bozze e aggiornerà il sito una sola volta."

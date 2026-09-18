@@ -5,6 +5,7 @@
 
 # Cartelle locali degli strumenti
 .netlify/
+*.code-workspace
 
 # File di sistema
 .DS_Store

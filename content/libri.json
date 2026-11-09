@@ -1,6 +1,30 @@
 {
   "books": [
     {
+      "publication_date": "2026-10-06",
+      "genre": "horror, sci-fi, weird",
+      "pages": 78,
+      "release": "06/10/2026 (riedizione)",
+      "tagline": "Vivono sotto di noi... e hanno fame.",
+      "purchase_url": "https://delos.digital/9788825438451/addendum",
+      "series": "Innsmouth",
+      "cover": "/assets/uploads/9788825438451-addendum.jpg",
+      "title": "Addendum ",
+      "reviews": [
+        {
+          "quote": "... Un horror urbano che prende una delle paure più antiche dell’umanità, quella di ciò che potrebbe nascondersi sotto i nostri piedi, e la trasporta nelle profondità di una metropoli contemporanea....",
+          "source": "Corriere Nerd",
+          "url": "https://www.corrierenerd.it/addendum-innsmouth-vol-265/"
+        }
+      ],
+      "publisher": "Delos Digital",
+      "formats": [
+        "Ebook"
+      ],
+      "description": "Qualcosa si cela nei cunicoli oscuri e maleodoranti delle viscere di Milano. È compito dell'investigatore Alessio Baldi svelare il mistero dell'omicidio di un senzatetto, trovato orribilmente dilaniato. Baldi si troverà a combattere dei mostri leggendari, gli Addendum, responsabili di tanta ferocia. Riuscirà a fermarli?",
+      "year": 2026
+    },
+    {
       "publication_date": "2026-05-26",
       "genre": "Weird",
       "pages": 165,
@@ -113,30 +137,6 @@
       ],
       "description": "Una spedizione archeologica si reca nel cuore della giungla indocinese in cerca di tesori nascosti da portare agli occhi della civiltà. I membri della spedizione, però, si scontreranno contro un predatore primordiale, che non darà loro tregua.  Una storia che per certi versi ricorda Le Montagne della follia di H. P. Lovecraft e la pellicola Predator.",
       "year": 2023
-    },
-    {
-      "publication_date": "2026-10-06",
-      "genre": "horror, sci-fi, weird",
-      "pages": 78,
-      "release": "06/10/2026 (riedizione)",
-      "tagline": "Vivono sotto di noi... e hanno fame.",
-      "purchase_url": "https://delos.digital/9788825438451/addendum",
-      "series": "Innsmouth",
-      "cover": "/assets/uploads/9788825438451-addendum.jpg",
-      "title": "Addendum ",
-      "reviews": [
-        {
-          "quote": "... Un horror urbano che prende una delle paure più antiche dell’umanità, quella di ciò che potrebbe nascondersi sotto i nostri piedi, e la trasporta nelle profondità di una metropoli contemporanea....",
-          "source": "Corriere Nerd",
-          "url": "https://www.corrierenerd.it/addendum-innsmouth-vol-265/"
-        }
-      ],
-      "publisher": "Delos Digital",
-      "formats": [
-        "Ebook"
-      ],
-      "description": "Qualcosa si cela nei cunicoli oscuri e maleodoranti delle viscere di Milano. È compito dell'investigatore Alessio Baldi svelare il mistero dell'omicidio di un senzatetto, trovato orribilmente dilaniato. Baldi si troverà a combattere dei mostri leggendari, gli Addendum, responsabili di tanta ferocia. Riuscirà a fermarli?",
-      "year": 2026
     }
   ]
 }

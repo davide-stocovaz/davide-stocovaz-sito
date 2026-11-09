@@ -1,6 +1,11 @@
 {
   "poems": [
     {
+      "featured": true,
+      "title": "Notturno solitario",
+      "text": "Solingo e fosco, mi separo da cani e da notti.\nVoglio sfondare il silenzio attraverso \nl’eco di una voce nuova e briosa:\nossa della bocca rigettate sulla neve.\nLe parole sono nelle storie che mi hai narrato.\nI tuoi occhi sono ancora radicati nei miei.\nLa tua mano non cerca più la mia.\nLe parole, ora, sono pellegrine in corridoi\nvuoti e profondi; affoga ogni luce.\nLe tue mani si sono sigillate labbra e occhi.\nLo vedi? Cosa potremmo mai più dirci, ormai?"
+    },
+    {
       "title": "Non ho bisogno di…",
       "text": "… sguardi giudicanti sparati\nda quadri senza colori.\n\n… raffiche di parole povere,\npiogge di veleno ch’escono\nda piccoli mendicanti della vita.\n\n… d’innalzarmi al più alto dei sapienti\ntrafiggendo il cielo con ali di cera.\n\nHo bisogno di restare collegato\na me stesso, sempre in diretta\nsu questo mutevole palcoscenico.",
       "featured": false
@@ -14,11 +19,6 @@
       "title": "Ho conosciuto il silenzio…",
       "text": "… tra le righe di parole\nmai dette né scritte;\nho ascoltato quello del cuore\narreso e sanguinante\ndopo lunghi addii\nche sapevano di assenzio.\nFaccio mio anche il tuo silenzio,\npugnalata nella mente,\nperché rispetto e amo\nogni tua libertà.",
       "featured": false
-    },
-    {
-      "featured": true,
-      "title": "Notturno solitario",
-      "text": "Solingo e fosco, mi separo da cani e da notti.\nVoglio sfondare il silenzio attraverso \nl’eco di una voce nuova e briosa:\nossa della bocca rigettate sulla neve.\nLe parole sono nelle storie che mi hai narrato.\nI tuoi occhi sono ancora radicati nei miei.\nLa tua mano non cerca più la mia.\nLe parole, ora, sono pellegrine in corridoi\nvuoti e profondi; affoga ogni luce.\nLe tue mani si sono sigillate labbra e occhi.\nLo vedi? Cosa potremmo mai più dirci, ormai?"
     }
   ]
 }

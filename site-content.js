@@ -112,16 +112,25 @@
     return article;
   }
 
+  function featuredFirst(items, featured) {
+    const index = items.indexOf(featured);
+    if (index <= 0) return items;
+    // Sposta solo il contenuto della Home: l'ordine manuale degli altri resta intatto.
+    return [items[index], ...items.slice(0, index), ...items.slice(index + 1)];
+  }
+
   function renderBooks(data) {
     const container = document.querySelector(".page-content");
     if (!container || !Array.isArray(data.books)) return;
-    container.replaceChildren(...data.books.map(bookArticle));
+    const books = featuredFirst(data.books, latestBook(data.books));
+    container.replaceChildren(...books.map(bookArticle));
   }
 
   function renderPoems(data) {
     const container = document.querySelector(".poetry-list");
     if (!container || !Array.isArray(data.poems)) return;
-    const cards = data.poems.map((poem, index) => {
+    const poems = featuredFirst(data.poems, homePoem(data.poems));
+    const cards = poems.map((poem, index) => {
       const article = make("article", "poem-card");
       article.append(make("p", "poem-number", `${String(index + 1).padStart(2, "0")} · Poesia`));
       const text = make("div", "poem-text");
@@ -136,7 +145,8 @@
   function renderStories(data) {
     const container = document.querySelector(".text-list");
     if (!container || !Array.isArray(data.stories)) return;
-    const cards = data.stories.map((story, index) => {
+    const stories = featuredFirst(data.stories, homeStory(data.stories));
+    const cards = stories.map((story, index) => {
       const article = make("article", "text-card");
       article.append(make("p", "", `${String(index + 1).padStart(2, "0")} · Racconto`));
       const heading = make("h2");
@@ -215,6 +225,14 @@
     })[0];
   }
 
+  function homeStory(stories) {
+    return stories?.find((item) => item.featured) || stories?.[0];
+  }
+
+  function homePoem(poems) {
+    return poems?.find((item) => item.featured);
+  }
+
   function renderHomeBook(data) {
     const book = latestBook(data.books);
     const article = document.querySelector(".featured-book-home");
@@ -229,7 +247,7 @@
   }
 
   function renderHomeStory(data) {
-    const story = data.stories?.find((item) => item.featured) || data.stories?.[0];
+    const story = homeStory(data.stories);
     const article = document.querySelector(".featured-story");
     if (!story || !article) return;
     article.querySelector("h3").textContent = story.title;
@@ -241,7 +259,7 @@
   }
 
   function renderHomePoem(data) {
-    const poem = data.poems?.find((item) => item.featured);
+    const poem = homePoem(data.poems);
     const title = document.querySelector(".quote-section blockquote");
     if (poem && title) title.textContent = poem.title;
   }
